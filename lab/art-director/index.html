@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Арт-директор</title>
+    <!-- slabtext stylesheet -->
+    <link href="css/slabtext.css" rel="stylesheet" type="text/css" />
+    <!-- demo styles inline -->
+    <style>
+        html,
+        body
+            {
+            background:#fcfcfc;
+            color:#444;
+            }
+        body
+            {
+            font: 16px/1.8 "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            width:92%;
+            padding:20px 0;
+            margin:0 auto;
+            }
+       .content-wrap,
+       footer
+            {
+            margin:0 auto;
+            max-width:50em;
+            }
+        /* http://css-tricks.com/simple-styles-for-horizontal-rules/ */
+        hr
+            {
+            border:0;
+            height:1px;
+            background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+            background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+            background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+            background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+            background-image:         linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0) 100%);
+            }
+        .col-1,
+        .col-2
+            {
+            float:none;
+            margin:0;
+            width:100%;
+            }
+        .col-1 p,
+        .col-2 p
+            {
+            color:#888;
+            font-size:80%;
+            text-align:center;
+            }
+        a
+            {
+            color:#111;
+            }
+        h1 a
+            {
+            /*text-decoration:none;*/
+            }
+        h1 a:hover
+            {
+            color:#a82222;
+            }
+        h1, h2
+            {
+            font-weight:700;
+            }
+        p
+            {
+            margin:0 0 1.6em 0;
+            line-height:1.6;
+            }
+        footer
+            {
+            border-top:3px double #aaa;
+            border-bottom:3px double #aaa;
+            padding-top:1em;
+            padding-bottom:0.4em;
+            margin-bottom:1em;
+            }
+        sup a
+            {
+            text-decoration:none;
+            }
+        pre
+            {
+            /*line-height:1.2;*/
+            padding:1em;
+            background: #33343f;
+
+            }
+        code,
+        dt
+            {
+            font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
+            color:#222;
+            }
+        pre code
+            {
+            display:block;
+            padding:1em;
+            font-size: 95%;
+            line-height: 140%;
+            white-space: pre;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            background: #23241f;
+            overflow-y: auto;
+            overflow-x: hidden;
+            color: #f8f8f2;
+            }
+        .hl-1
+            {
+            color: #f92672;
+            }
+        .hl-2
+            {
+            color: #e6db74;
+            }
+        .u--clear-float
+            {
+            clear:both;
+            }
+        .amp
+            {
+            font-family:Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;
+            font-style:italic;
+            font-weight:lighter;
+            }
+        /* Set font-sizes for the headings to be given the slabText treatment */
+        h1
+            {
+            text-align:left;
+            font-family:"Open Sans", "Oswald", "Arial Black", Gadget, sans-serif;
+            /*text-transform:uppercase;*/
+            line-height:1;
+            color:#222;
+            font-weight: 400;
+            дуе
+            }
+
+        .black{
+            font-weight: bold;
+        }
+        .lower{
+            text-transform: lowercase;
+        }
+        .upper{
+            text-transform: uppercase;
+        }
+
+        .spaced-vertical{
+            margin-top: 6vw;
+            margin-bottom: 4vw;
+        }
+        /* Adjust the line-height for all headlines contining small letter
+           counts as the font will probably be rendered at a large scale
+           and we want to reduce the interline whitespace slightly.
+           This isn't an exact art and the line-height you set will also depend
+           on the font used.
+           Headlines that have been preset do not have this utility class added
+           to the existing spans (but individual lines can always be targetted
+           using the nth-child selector as shown below) */
+        .slabtext-linesize-0
+        {
+        line-height:.9;
+        }
+        /* Just for the demo, adjust the line-height of the second line
+           within the preset headline (the line that reads "Jackie Mittoo") */
+        #studio-one span:nth-child(2)
+        {
+        line-height:.9;
+        }
+        @media only screen 
+        and (min-device-width : 320px) 
+        and (max-device-width : 568px) 
+        {
+
+            .emoji{
+                font-size: 100%;
+                display:none;
+            }
+
+        }
+        @media screen and (min-width: 460px)
+            {
+                h1
+                    {
+                    font-size:26px;
+                    }
+                h2
+                    {
+                    font-size:18px;
+                    }
+            }
+        @media screen and (min-width: 760px)
+            {
+                .col-1
+                    {
+                    width:47.5%;
+                    margin:0 2.5% 0 0;
+                    float:left;
+                    }
+                .col-2
+                    {
+                    width:47.5%;
+                    margin:0 0 0 2.5%;
+                    float:left;
+                    }
+                .col-1 h1,
+                .col-2 h1
+                    {
+                    font-size: 26px;
+                    }
+                h1
+                    {
+                    font-size:28px;
+                    }
+                h2
+                    {
+                    font-size:20px;
+                    }
+            }
+        @media screen and (min-width: 960px)
+            {
+                body
+                    {
+                    width:80%;
+                    }
+                h1,
+                .col-1 h1,
+                .col-2 h1
+                    {
+                    font-size:36px;
+                    }
+                h2
+                    {
+                    font-size:22px;
+                    }
+            }
+        @media screen and (min-width: 1180px)
+            {
+                body
+                    {
+                    max-width:1200px;
+                    }
+                h1
+                    {
+                    font-size:46px;
+                    }
+                h2
+                    {
+                    font-size:32px;
+                    }
+            }
+        .first-d-letter{
+            position:relative;
+            top:-2.5vw;
+            font-size: 150%;
+            line-height: 0.7
+        }
+
+        .container{
+            padding-top: 4vw;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+/*        .exclamation{
+            margin-top: 1vw;
+            margin-bottom: 4vw;
+        }*/
+        .rule{
+/*            margin-top: 100px;
+            margin-bottom: 100px;*/
+            /*padding: -50px;*/
+            /*border: 2vw solid red;*/
+            color: red;
+        }
+        .finally{
+            margin-top: 4vw;
+        }
+        a{
+            text-decoration: none;
+            /*padding-bottom: 2px*/
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+        .copyright{
+            margin-top: 10vw;
+        }
+        .stars{
+            margin-bottom: -2vw;
+        }
+    </style>
+    <!--[if lte IE 7]>
+    <style>
+    body
+        {
+        width:960px;
+        margin:0 auto;
+        }
+    </style>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+        <h1 id="h1">
+            <span class="slabtext stars">☆☆☆☆☆☆☆☆☆☆</span>
+            <span class="slabtext black"><span class="first-d-letter">Д</span>изайнер</span>
+            <span class="slabtext">если ты работаешь в студии</span>
+            <span class="slabtext">и к тебе приходит новый супер-проект</span>
+            <span class="slabtext black">не спеши делать дизайн</span>
+            <span class="slabtext">даже если проект очень <span class="emoji">&#128293;</span>срочный<span class="emoji">&#128293;</span></span>
+            <span class="slabtext">и менеджер умоляет поскорее делать дизайн</span>
+            <span class="slabtext black">первым делом узнай</span>
+            <span class="slabtext black">кто арт-директор проекта</span>
+            
+
+            <span class="slabtext dots">..............................................................</span>
+
+            <span class="slabtext upper black">арт-директор</span>
+            <span class="slabtext">это самый-самый</span>
+            <span class="slabtext">супер-мега-гипер-VIP-хэштэг-монстр студии</span>
+            <span class="slabtext spaced-vertical">( ▀ 益 ▀ )</span>
+            <span class="slabtext">каждый день арт-директор</span>
+            <span class="slabtext">решает сложнейшие проблемы на проектах</span>
+            <span class="slabtext">общается с дизайнерами, клиентами и дизайнерами клиента</span>
+            <span class="slabtext">раскручивает маховик времени</span>
+            <span class="slabtext">и зажигает глаза у всех причастных</span>
+
+            <span class="slabtext black">без арт-директора</span>
+            <span class="slabtext black">не бывает студийных проектов</span>
+            <span class="slabtext upper black">вообще <span class="emoji">&#9940;</span> никаких</span>
+
+            <span class="slabtext exclamation">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+
+            <span class="slabtext upper black finally">Итак</span>
+            <span class="slabtext upper black">есть простое правило</span>
+
+            <div class="rule upper black spaced-vertical">
+                 <span class="slabtext">Если на проекте</span>
+                <span class="slabtext">нет арт-директора</span>
+                 <span class="slabtext">то и проекта нет</span>
+            </div>
+
+            <!-- <hr> -->
+            <span class="slabtext"><span class="emoji">&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;&#9757;</span></span>
+
+            <!-- <span class="slabtext">☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼☝️🏼</span> -->
+
+
+            <div class="copyright">
+                <span class="slabtext">Сделано без арт-директоров, менеджеров и технологов при помощи плагина <a href="https://github.com/freqdec/slabText">slabText</a> в две тысяча шестнадцатом году после очередного письма Артемия Лебедева с темой «Арт-директор» дизайнером Студии Артемия Лебедева — Иваном Тихомировым</span>
+            </div>
+        </h1>
+
+        </div>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="js/jquery.slabtext.min.js"></script>
+    <script>
+    function slabTextHeadlines() {
+        $("h1").slabText({
+            // Don't slabtext the headers if the viewport is under 380px
+            "viewportBreakpoint":380,
+        });
+    };
+
+    // Load fonts using google font loader
+    var WebFontConfig = {
+        google: { families: [ 'Open+Sans:400,700:latin', 'Oswald:700:latin' ] },
+        // slabText the headers when the font has finished loading (or not)
+        fontactive: slabTextHeadlines,
+        fontinactive: slabTextHeadlines
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+    </script>
+</body>
+</html>
